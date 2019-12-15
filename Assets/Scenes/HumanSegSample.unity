@@ -466,7 +466,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &642201223
 RectTransform:
   m_ObjectHideFlags: 0
@@ -803,7 +803,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &901906344
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1047,7 +1047,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1141330382
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1390,6 +1390,7 @@ GameObject:
   - component: {fileID: 1335839535}
   - component: {fileID: 1335839534}
   - component: {fileID: 1335839536}
+  - component: {fileID: 1335839537}
   m_Layer: 0
   m_Name: AR Session Origin
   m_TagString: Untagged
@@ -1439,6 +1440,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_HumanSegmentationStencilMode: 1
   m_HumanSegmentationDepthMode: 1
+--- !u!114 &1335839537
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1335839533}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd8e2e595b0b443e39618c9b4e2c48f4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mat: {fileID: 2100000, guid: ad416009af5a5493397df34e122e2656, type: 2}
+  debugTex: {fileID: 2800000, guid: f24267221031f4c52932dc5752aec044, type: 3}
+  arCamBg: {fileID: 282840812}
+  occulusionManager: {fileID: 1335839536}
+  image: {fileID: 1474869893}
 --- !u!1 &1449726330
 GameObject:
   m_ObjectHideFlags: 0

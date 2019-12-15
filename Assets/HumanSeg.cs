@@ -38,6 +38,10 @@ public class HumanSeg : MonoBehaviour
         /// var mat = this.mat.GetComponent<Image>().material;
         // var mat = image.GetComponent<Renderer>().material;
         // var mat = image.GetComponentInChildren<Renderer>().material;
+        if (!arCamBg.backgroundRenderingEnabled)
+        {
+            return;
+        }
 
         if (arCamBg.material != null)
         {
