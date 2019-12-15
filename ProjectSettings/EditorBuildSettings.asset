@@ -8,7 +8,13 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/SampleScene.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
-  - enabled: 1
+  - enabled: 0
     path: Assets/Externals/arfoundation-samples-master/Assets/Scenes/HumanSegmentation/HumanBodyTracking3D.unity
     guid: 9fc1f5ed98d414310a8b9e659c295d7c
+  - enabled: 0
+    path: Assets/Externals/arfoundation-samples-master/Assets/Scenes/HumanSegmentation/HumanSegmentationImages.unity
+    guid: ed5207d50697d40d688249cd6c59608b
+  - enabled: 1
+    path: Assets/Scenes/HumanSegSample.unity
+    guid: 6e95a50524ca64cde96355dcbc5886fe
   m_configObjects: {}
