@@ -21,15 +21,15 @@ public class HumanSeg : MonoBehaviour
     [SerializeField]
     RawImage image;
 
-    [SerializeField]
-    GameObject quad;
+    // [SerializeField]
+    // GameObject quad;
 
     RenderTexture renderTex;
 
     void Awake()
     {
         _captureTexture = new RenderTexture(Screen.width, Screen.height, 0);
-        quad.GetComponent<Renderer>().material = mat;
+        // quad.GetComponent<Renderer>().material = mat;
     }
 
     void Update()
