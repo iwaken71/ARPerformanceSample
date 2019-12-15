@@ -12,14 +12,24 @@ public class HumanSeg : MonoBehaviour
     Material mat;
 
     [SerializeField]
+    Texture2D debugTex;
+    [SerializeField]
     ARCameraBackground arCamBg;
 
     [SerializeField]
     AROcclusionManager occulusionManager;
+    [SerializeField]
+    RawImage image;
+
+    [SerializeField]
+    GameObject quad;
+
+    RenderTexture renderTex;
 
     void Awake()
     {
         _captureTexture = new RenderTexture(Screen.width, Screen.height, 0);
+        quad.GetComponent<Renderer>().material = mat;
     }
 
     void Update()
@@ -33,12 +43,14 @@ public class HumanSeg : MonoBehaviour
         {
             Graphics.Blit(null, _captureTexture, arCamBg.material);
         }
+
+        mat.SetTexture("_OverTex", _captureTexture);
         Texture2D stencilTex = occulusionManager.humanStencilTexture;
-        if (!initialized)
+        if (stencilTex != null)
         {
-            // stencilTex(256, 192)
-            if (stencilTex != null)
+            if (!initialized)
             {
+                // stencilTex(256, 192)
                 Debug.LogFormat("stencilTex({0},{1})", stencilTex.width, stencilTex.height);
                 Debug.LogFormat("_captureTexture({0},{1})", _captureTexture.width, _captureTexture.height);
                 float stencilRatio = (float)stencilTex.width / (float)stencilTex.height;
@@ -48,13 +60,19 @@ public class HumanSeg : MonoBehaviour
                 mat.SetFloat("_Ratio", ratio);
                 initialized = true;
             }
+            mat.SetTexture("_MaskTex", stencilTex);
         }
-        mat.SetTexture("_OverTex", _captureTexture);
-        mat.SetTexture("_MaskTex", stencilTex);
+        else
+        {
+            mat.SetTexture("_MaskTex", debugTex);
+        }
+
+        // Graphics.Blit(null, renderTex, mat);
+        image.texture = _captureTexture;
     }
 
-    private void OnRenderImage(RenderTexture src, RenderTexture dest)
-    {
-        Graphics.Blit(src, dest, mat);
-    }
+    // private void OnRenderImage(RenderTexture src, RenderTexture dest)
+    // {
+    //     Graphics.Blit(src, dest, _material);
+    // }
 }
