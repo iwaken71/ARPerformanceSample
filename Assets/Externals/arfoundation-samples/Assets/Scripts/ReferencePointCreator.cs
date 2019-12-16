@@ -3,24 +3,24 @@ using UnityEngine;
 using UnityEngine.XR.ARFoundation;
 using UnityEngine.XR.ARSubsystems;
 
-[RequireComponent(typeof(ARAnchorManager))]
+[RequireComponent(typeof(ARReferencePointManager))]
 [RequireComponent(typeof(ARRaycastManager))]
-public class AnchorCreator : MonoBehaviour
+public class ReferencePointCreator : MonoBehaviour
 {
-    public void RemoveAllAnchors()
+    public void RemoveAllReferencePoints()
     {
-        foreach (var anchor in m_Anchors)
+        foreach (var referencePoint in m_ReferencePoints)
         {
-            m_AnchorManager.RemoveAnchor(anchor);
+            m_ReferencePointManager.RemoveReferencePoint(referencePoint);
         }
-        m_Anchors.Clear();
+        m_ReferencePoints.Clear();
     }
 
     void Awake()
     {
         m_RaycastManager = GetComponent<ARRaycastManager>();
-        m_AnchorManager = GetComponent<ARAnchorManager>();
-        m_Anchors = new List<ARAnchor>();
+        m_ReferencePointManager = GetComponent<ARReferencePointManager>();
+        m_ReferencePoints = new List<ARReferencePoint>();
     }
 
     void Update()
@@ -37,23 +37,23 @@ public class AnchorCreator : MonoBehaviour
             // Raycast hits are sorted by distance, so the first one
             // will be the closest hit.
             var hitPose = s_Hits[0].pose;
-            var anchor = m_AnchorManager.AddAnchor(hitPose);
-            if (anchor == null)
+            var referencePoint = m_ReferencePointManager.AddReferencePoint(hitPose);
+            if (referencePoint == null)
             {
-                Logger.Log("Error creating anchor");
+                Logger.Log("Error creating reference point");
             }
             else
             {
-                m_Anchors.Add(anchor);
+                m_ReferencePoints.Add(referencePoint);
             }
         }
     }
 
     static List<ARRaycastHit> s_Hits = new List<ARRaycastHit>();
 
-    List<ARAnchor> m_Anchors;
+    List<ARReferencePoint> m_ReferencePoints;
 
     ARRaycastManager m_RaycastManager;
 
-    ARAnchorManager m_AnchorManager;
+    ARReferencePointManager m_ReferencePointManager;
 }
