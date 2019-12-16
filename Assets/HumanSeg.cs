@@ -17,7 +17,7 @@ public class HumanSeg : MonoBehaviour
     ARCameraBackground arCamBg;
 
     [SerializeField]
-    AROcclusionManager occulusionManager;
+    ARHumanBodyManager m_HumanBodyManager;
     [SerializeField]
     RawImage image;
 
@@ -38,10 +38,10 @@ public class HumanSeg : MonoBehaviour
         /// var mat = this.mat.GetComponent<Image>().material;
         // var mat = image.GetComponent<Renderer>().material;
         // var mat = image.GetComponentInChildren<Renderer>().material;
-        if (!arCamBg.backgroundRenderingEnabled)
-        {
-            return;
-        }
+        // if (!arCamBg.backgroundRenderingEnabled)
+        // {
+        //     return;
+        // }
 
         if (arCamBg.material != null)
         {
@@ -49,7 +49,7 @@ public class HumanSeg : MonoBehaviour
         }
 
         mat.SetTexture("_OverTex", _captureTexture);
-        Texture2D stencilTex = occulusionManager.humanStencilTexture;
+        Texture2D stencilTex = m_HumanBodyManager.humanStencilTexture;
         if (stencilTex != null)
         {
             if (!initialized)
@@ -71,8 +71,8 @@ public class HumanSeg : MonoBehaviour
             mat.SetTexture("_MaskTex", debugTex);
         }
 
-        // Graphics.Blit(null, renderTex, mat);
-        image.texture = _captureTexture;
+        Graphics.Blit(null, renderTex, mat);
+        image.texture = renderTex;
     }
 
     // private void OnRenderImage(RenderTexture src, RenderTexture dest)
