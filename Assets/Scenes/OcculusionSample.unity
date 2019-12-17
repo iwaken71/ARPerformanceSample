@@ -303,10 +303,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   occlusionManager: {fileID: 1335839536}
   shader: {fileID: 4800000, guid: 1f7241dfaae2d4ba09066e1ce781296f, type: 3}
-  debugTex: {fileID: 2800000, guid: f24267221031f4c52932dc5752aec044, type: 3}
-  rawImage: {fileID: 893697770}
-  arCamBg: {fileID: 282840812}
-  rentex: {fileID: 8400000, guid: 6f8414681cae84894ad49a2ca0cf8f1b, type: 2}
+  debugTex: {fileID: 0}
 --- !u!1 &427002218
 GameObject:
   m_ObjectHideFlags: 0
@@ -823,7 +820,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &893697769
 RectTransform:
   m_ObjectHideFlags: 0
