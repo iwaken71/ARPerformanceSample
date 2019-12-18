@@ -855,6 +855,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a0c765a0876fb410f8525e7ec1ada3c2, type: 3}
+--- !u!1 &4829259701478229489 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3386000860163993620, guid: a0c765a0876fb410f8525e7ec1ada3c2,
+    type: 3}
+  m_PrefabInstance: {fileID: 4829259701478229488}
+  m_PrefabAsset: {fileID: 0}
 --- !u!137 &5791426225041228696 stripped
 SkinnedMeshRenderer:
   m_CorrespondingSourceObject: {fileID: 1394916777075328616, guid: a0c765a0876fb410f8525e7ec1ada3c2,
@@ -880,6 +886,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   leftHand: {fileID: 2791887761959052131}
+  rightHand: {fileID: 4829259701478229489}
   effectPrefab: {fileID: 4044013847592649678, guid: f96e094b9055547c683898c70a089f1d,
+    type: 3}
+  effect2Prefab: {fileID: 336268845470711773, guid: 2bbc926fda20a4f61a7e93c72ffacaeb,
     type: 3}
   bodyMesh: {fileID: 5791426225041228696}
