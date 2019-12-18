@@ -2,9 +2,8 @@
 using UnityEngine.UI;
 using UnityEngine.XR.ARFoundation;
 
-[RequireComponent(typeof(Camera))]
-public class OcculusionSample : MonoBehaviour
-{
+[RequireComponent (typeof (Camera))]
+public class OcculusionSample : MonoBehaviour {
     [SerializeField]
     AROcclusionManager occlusionManager;
 
@@ -15,16 +14,17 @@ public class OcculusionSample : MonoBehaviour
     Texture2D debugTex;
     Material material;
 
-    void Awake()
-    {
-        material = new Material(shader);
+    void Awake () {
+        material = new Material (shader);
     }
-    void OnRenderImage(RenderTexture src, RenderTexture dest)
-    {
-        if (occlusionManager != null)
-        {
-            material.SetTexture("_StencilTex", occlusionManager.humanStencilTexture);
+    void OnRenderImage (RenderTexture src, RenderTexture dest) {
+#if Unity_Editor
+        material.SetTexture ("_StencilTex", debugTex);
+#else // on device
+        if (occlusionManager != null) {
+            material.SetTexture ("_StencilTex", occlusionManager.humanStencilTexture);
         }
-        Graphics.Blit(src, dest, material);
+#endif
+        Graphics.Blit (src, dest, material);
     }
 }
