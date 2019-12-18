@@ -70,6 +70,7 @@
                 fixed4 stencil = tex2D(_StencilTex, GetStencilUV(i.uv));
 
                 return lerp( col, fixed4(1,0,0,1), stencil.r);
+
                 // fixed4 over = tex2D(_OverTex, IN.uv_OverTex);
                 // fixed4 c = stencil.r * over * _Color;
                 // clip(stencil.r - 0.5);
