@@ -25,7 +25,7 @@ ARKit3 (AR Foundation) を使ってARパフォーマンスを行うためのサ�
 - MotionCaptureSample (モーションキャプチャを使用して演出を追加)
 - OcculusionSample (people occulusionを使用して人物抽出)
 
-![BuildSettings](images/BuildSettings.png)
+![BuildSettings](https://raw.githubusercontent.com/wiki/fushikky/ARPerformanceSample/images/BuildSettings.png)
 
 ## プロジェクト内容の説明
 
@@ -47,8 +47,8 @@ Unity Package Managerを使用して以下のパッケージを導入してい�
 モーションキャプチャーを使ってエフェクトを発生させます。両手首から虹色のエフェクトが出ます。
 画面タップでモーションキャプチャ用ロボットのON/OFFができます。
 
-![MotionCaptureAppearance](images/MotionCaptureAppearance.png)
-![MotionCaptureAppearance](images/MotionCaptureAppearanceWithRobot.png)
+![MotionCaptureAppearance](https://raw.githubusercontent.com/wiki/fushikky/ARPerformanceSample/images/MotionCaptureAppearance.png)
+![MotionCaptureAppearance](https://raw.githubusercontent.com/wiki/fushikky/ARPerformanceSample/images/MotionCaptureAppearanceWithRobot.png)
 
 - シーンのPath
   - Assets/Scenes/MotionCaptureSample.unity
@@ -56,10 +56,10 @@ Unity Package Managerを使用して以下のパッケージを導入してい�
 を拡張する形の構成になっています)
 
 - Hierarchy
-![MotionCaptureSample](images/MotionCaptureSample.png)
+![MotionCaptureSample](https://raw.githubusercontent.com/wiki/fushikky/ARPerformanceSample/images/MotionCaptureSample.png)
 
 - ControlledRobotオブジェクト(hierarchy上)
-![ControlledRobot](images/ControlledRobot.png)
+![ControlledRobot](https://raw.githubusercontent.com/wiki/fushikky/ARPerformanceSample/images/ControlledRobot.png)
 モーションキャプチャ用のロボットです。こちらのロボットの関節などにエフェクトをアタッチしていくことになると思います。(詳しくは`MotionEffectSample.cs`を参考に)
 ここで、HumanBodyTracking3Dとの差分として、ControlledRobotがヒエラルキー上に置いてあります。これは、HumanBodyTrackerが端末でしか動作しないため、`HumanBodyTracker.cs` を変更し、
 UnityEditor上でも動作確認ができるようにするちょっとしたハックです。
@@ -72,7 +72,7 @@ UnityEditor上でも動作確認ができるようにするちょっとしたハ
 ### OcculusionSample
 PeopleOcculusionとshaderを使って人物領域を赤く塗りつぶすサンプルです。
 画像左上にPeopleOcculusionの情報が表示されています。
-![OcculusionAppearance](images/OcculusionAppearance.png)
+![OcculusionAppearance](https://raw.githubusercontent.com/wiki/fushikky/ARPerformanceSample/images/OcculusionAppearance.png)
 
 一部こちらのサンプルのコードを参考にしています。
 [ARFoundationとARKit3で光学迷彩的エフェクト - Qiita](https://qiita.com/kitasenjudesign/items/2cbe031f40877067b58d)
@@ -83,7 +83,7 @@ PeopleOcculusionとshaderを使って人物領域を赤く塗りつぶすサン�
 を拡張する形の構成になっています。
 
 - Hierarchy
-![OcculusionSample](images/OcculusionSample.png)
+![OcculusionSample](https://raw.githubusercontent.com/wiki/fushikky/ARPerformanceSample/images/OcculusionSample.png)
 
 - OcculusionSample.cs
 SerializeFielで指定したShaderの`_StencilTex"`に検出したhumanStencilTexture(人物領域のテクスチャ)を設定し、OnRenderImageでshaderの計算結果を画面に描画しています。OnRenderImageの処理から分かるように、Cameraオブジェクトにアタッチしないと動作しません。
