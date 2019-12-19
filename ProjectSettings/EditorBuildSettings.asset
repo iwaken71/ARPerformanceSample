@@ -11,4 +11,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/OcculusionSample.unity
     guid: 3e90ed27e5f4049fd8b8a4b858069c6b
-  m_configObjects: {}
+  m_configObjects:
+    com.unity.xr.management.loader_settings: {fileID: 11400000, guid: 54fa55e8581ab4b9585a12526ca86748,
+      type: 2}
