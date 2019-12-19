@@ -711,8 +711,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   leftHand: {fileID: 2791887761959052131}
   rightHand: {fileID: 4829259701478229489}
-  effectPrefab: {fileID: 4044013847592649678, guid: f96e094b9055547c683898c70a089f1d,
+  effectPrefab: {fileID: 2363206770242402289, guid: 9016dd87444c746fcbd34bf5969aec58,
     type: 3}
-  effect2Prefab: {fileID: 336268845470711773, guid: 2bbc926fda20a4f61a7e93c72ffacaeb,
+  effect2Prefab: {fileID: 2363206770242402289, guid: 9016dd87444c746fcbd34bf5969aec58,
     type: 3}
   bodyMesh: {fileID: 5791426225041228696}
