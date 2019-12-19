@@ -290,7 +290,7 @@ PlayerSettings:
     m_DynamicBatching: 0
   - m_BuildTarget: iPhone
     m_StaticBatching: 1
-    m_DynamicBatching: 0
+    m_DynamicBatching: 1
   - m_BuildTarget: WebGL
     m_StaticBatching: 0
     m_DynamicBatching: 0
@@ -320,7 +320,7 @@ PlayerSettings:
   m_TemplateCustomTags: {}
   mobileMTRendering:
     Android: 1
-    iPhone: 1
+    iPhone: 0
     tvOS: 1
   m_BuildTargetGroupLightmapEncodingQuality: []
   m_BuildTargetGroupLightmapSettings: []
@@ -651,4 +651,4 @@ PlayerSettings:
   cloudEnabled: 0
   enableNativePlatformBackendsForNewInputSystem: 0
   disableOldInputManagerSupport: 0
-  legacyClampBlendShapeWeights: 0
+  legacyClampBlendShapeWeights: 1
