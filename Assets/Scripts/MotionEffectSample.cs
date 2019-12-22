@@ -34,10 +34,11 @@ public class MotionEffectSample : MonoBehaviour
 
     void Update()
     {
-        // MotionCaptureロボットのメッシュのON/OFF
-        if (Input.GetMouseButtonDown(0))
-        {
-            bodyMesh.enabled = !bodyMesh.enabled;
-        }
+
+    }
+
+    public void RobotOnOff() {
+        bodyMesh.enabled = !bodyMesh.enabled;
     }
 }
+
