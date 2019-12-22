@@ -6,12 +6,9 @@ using System.Linq;
 public class EffectManager : MonoBehaviour
 {
 
-   //[SerializeField] GameObject RootRobot;
-
-
     [SerializeField] EventTask[] events;
-    bool isPlaying = false;
-    float timer;
+   
+
     // Start is called before the first frame update
     void Start()
     {
@@ -22,25 +19,27 @@ public class EffectManager : MonoBehaviour
 
     private void Initialize()
     {
-        isPlaying = false;
-        timer = 0;
+      
+
+
+        foreach (var ev in events) {
+        }
 
     }
 
     // Update is called once per frame
     void Update()
     {
-        
-        if (!isPlaying) {
-            return;
-        }
-
-        timer += Time.deltaTime;
-        TimerCheck();
+        CheckStartTime();
     }
 
-    void TimerCheck() {
-        var eventsTask = events.Where(events => !events.HasPlayed).Where(events => events.time < timer).ToArray();
+    void CheckStartTime() {
+        if (!TimerManager.Instance.IsPlaying) {
+            return;
+        }
+        float timer = TimerManager.Instance.Timer;
+
+        var eventsTask = events.Where(events => !events.HasPlayed).Where(events => events.startTime < timer).ToArray();
         if (eventsTask.Length <= 0) {
             return;
         }
@@ -50,24 +49,13 @@ public class EffectManager : MonoBehaviour
         }
     }
 
-    public void StartTimer() {
-        isPlaying = true;
-    }
-
-
-    public void ResetTimer() {
-        timer = 0;
-        isPlaying = false;
-    }
-
-
 }
 
 [System.Serializable]
 public class EventTask
 {
-    public float time;
-    public int eventID;
+    public float startTime;
+    //public int eventID;
     public ParticleOnlyEffectSystem[] systems;
     public bool HasPlayed { private set; get; }// すでに始まっている
 
