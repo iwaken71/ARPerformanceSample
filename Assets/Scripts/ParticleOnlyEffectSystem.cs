@@ -5,7 +5,6 @@ using UnityEngine;
 [RequireComponent(typeof(ParticleSystem))]
 public class ParticleOnlyEffectSystem : MonoBehaviour,IEffectSystem
 {
-    [SerializeField] int eventID;
     ParticleSystem system;
 
     void Awake() {
@@ -22,9 +21,4 @@ public class ParticleOnlyEffectSystem : MonoBehaviour,IEffectSystem
     public void Stop() {
         system.Stop();
     }
-
-    public int GetEventID() {
-        return eventID;
-    }
-
 }
