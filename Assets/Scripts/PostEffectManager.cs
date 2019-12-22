@@ -13,16 +13,10 @@ public class PostEffectManager : MonoBehaviour
     {
         Initialize();
 
-
     }
 
     private void Initialize()
     {
-
-        foreach (var ev in events)
-        {
-   
-        }
 
     }
 
@@ -39,6 +33,13 @@ public class PostEffectManager : MonoBehaviour
         if (!TimerManager.Instance.IsPlaying) {
             return;
         }
+        if (events == null) {
+            return;
+        }
+        if (events.Length == 0)
+        {
+            return;
+        }
         float timer = TimerManager.Instance.Timer;
         var eventsTask = events.Where(events => !events.HasPlayed).Where(events => events.startTime < timer).ToArray();
         if (eventsTask.Length <= 0)
@@ -52,6 +53,14 @@ public class PostEffectManager : MonoBehaviour
     }
     void EndTimeCheck() {
         if (!TimerManager.Instance.IsPlaying)
+        {
+            return;
+        }
+        if (events == null)
+        {
+            return;
+        }
+        if (events.Length == 0)
         {
             return;
         }
@@ -89,10 +98,15 @@ public class PostEffectEventTask
 
     public void Play()
     {
+        if (systems.Length == 0)
+        {
+            return;
+        }
         if (HasPlayed)
         {
             return;
         }
+
         HasPlayed = true;
         foreach (var system in systems)
         {
@@ -101,6 +115,13 @@ public class PostEffectEventTask
     }
     public void Stop()
     {
+        if (!HasPlayed)
+        {
+            return;
+        }
+        if (systems.Length == 0) {
+            return;
+        }
         foreach (var system in systems)
         {
             system.Stop();
